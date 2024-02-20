@@ -1,0 +1,34 @@
+providers = []
+buildImage = 'ghcr.io/railwayapp/nixpacks:ubuntu-1702339400'
+
+[variables]
+CI = 'true'
+NIXPACKS_METADATA = 'node'
+NODE_ENV = 'production'
+NPM_CONFIG_PRODUCTION = 'false'
+[phases.build]
+dependsOn = ['install']
+cmds = ['yarn run build']
+cacheDirectories = [
+    '.next/cache',
+    'node_modules/.cache',
+]
+
+[phases.install]
+dependsOn = ['setup']
+cmds = ['yarn install --frozen-lockfile']
+# cacheDirectories = ['/usr/local/share/.cache/yarn/v6']
+paths = ['/app/node_modules/.bin']
+
+[phases.setup]
+nixPkgs = [
+    'nodejs_18',
+    'yarn-1_x',
+    'openssl',
+]
+nixOverlays = ['https://github.com/railwayapp/nix-npm-overlay/archive/main.tar.gz']
+nixpkgsArchive = 'bf744fe90419885eefced41b3e5ae442d732712d'
+
+[start]
+cmd = 'yarn run start'
+
