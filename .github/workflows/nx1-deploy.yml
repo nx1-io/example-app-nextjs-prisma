@@ -29,7 +29,7 @@ jobs:
         with:
           operation: 'prepare'
           api_url: 'https://dev-app.citadel.run/api'
-          app_id: 9b612b36-d1bc-49b8-b006-0a62b55c288f
+          app_id: 9b62ba84-1da0-4130-b855-b1febbb4e0d9
           api_token: ${{ secrets.NX1_API_TOKEN }}
           env_id: 4c902cae-c43f-4be0-83b6-0df7173f8184
 
