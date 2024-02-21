@@ -30,5 +30,5 @@ nixOverlays = ['https://github.com/railwayapp/nix-npm-overlay/archive/main.tar.g
 nixpkgsArchive = 'bf744fe90419885eefced41b3e5ae442d732712d'
 
 [start]
-cmd = 'sleep 99999999'
+cmd = '. ~/.profile && yarn run start'
 
