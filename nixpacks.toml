@@ -17,7 +17,7 @@ cacheDirectories = [
 [phases.install]
 dependsOn = ['setup']
 cmds = ['yarn install --frozen-lockfile']
-# cacheDirectories = ['/usr/local/share/.cache/yarn/v6']
+cacheDirectories = ['/usr/local/share/.cache/yarn/v6']
 paths = ['/app/node_modules/.bin']
 
 [phases.setup]
@@ -30,5 +30,5 @@ nixOverlays = ['https://github.com/railwayapp/nix-npm-overlay/archive/main.tar.g
 nixpkgsArchive = 'bf744fe90419885eefced41b3e5ae442d732712d'
 
 [start]
-cmd = 'yarn run start'
+cmd = 'npm run start'
 
