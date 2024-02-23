@@ -50,6 +50,6 @@ jobs:
         with:
           operation: 'run'
           service: 'web'
-          command: 'yarn migrate:deploy && yarn seed' # replace with your migration command
+          command: 'yarn migrate:deploy' # replace with your migration command
 
 # rev:1
